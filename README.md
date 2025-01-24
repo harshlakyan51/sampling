@@ -17,7 +17,7 @@ This project focuses on analyzing and detecting fraudulent credit card transacti
   - [Model Training and Evaluation](#model-training-and-evaluation)
 - [Requirements](#requirements)
 - [Usage](#usage)
-- [License](#license)
+
 
 ## **Installation Instructions**
 
@@ -43,7 +43,7 @@ SMOTE for handling class imbalance.
 Various sampling techniques to generate diverse subsets of the dataset for model training.
 
 # Workflow
-## 1. Data Loading and Initial Exploration
+ ### 1. Data Loading and Initial Exploration
 The dataset is loaded using pandas from a CSV file. We perform initial exploration:
 ```bash
 data.head()
@@ -55,24 +55,24 @@ data.head(): Displays the first 5 rows.
 data.info(): Displays metadata (column names, data types, etc.).
 data.describe(): Displays summary statistics of numerical columns.
 
- ## 2. Class Distribution Analysis
+  # 2. Class Distribution Analysis
 We examine the distribution of the target variable Class (fraud or non-fraud):
 ```bash
 data["Class"].value_counts()
-```
-## 3. Missing Values Check
+ ```
+ ### 3. Missing Values Check
 We check for any missing values in the dataset:
 ```bash
 missing_values = data.isnull().sum()
 ```
-## 4. Handling Imbalanced Dataset with SMOTE
+ ### 4. Handling Imbalanced Dataset with SMOTE
 We apply SMOTE to create synthetic samples of the minority class (fraudulent transactions) and balance the dataset:
 ```bash
 from imblearn.over_sampling import SMOTE
 smote = SMOTE()
 x_smote, y_smote = smote.fit_resample(x, y)
 ```
-## 5. Creating Samples
+ ### 5. Creating Samples
 We generate five samples using various sampling techniques:
 ```bash
 # Simple Random Sampling
@@ -98,7 +98,7 @@ sample5 = balanced_data.iloc[np.random.choice(len(balanced_data), size=int(0.2 *
 
 ```
 
-## 6. Model Training and Evaluation
+ ### 6. Model Training and Evaluation
 We train and evaluate multiple machine learning models using the generated samples:
 ```bash
 from sklearn.linear_model import LogisticRegression
