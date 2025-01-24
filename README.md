@@ -148,9 +148,8 @@ Install the required libraries by running the following:
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
 ```
-## 2. Download the dataset (Creditcard_data.csv) and place it in the specified location (C:\Users\ASUS\Downloads\Creditcard_data.csv).
 
-## 3 Run the script to:
+##  Run the script to:
 
 Load and inspect the dataset.
 Preprocess the data (including visualizations).
